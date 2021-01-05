@@ -1,3 +1,4 @@
 import './scss/app.scss';
-import './js/gem-puzzle.js';
+import './js/bots-list.js';
+import './js/questions-list.js';
 
