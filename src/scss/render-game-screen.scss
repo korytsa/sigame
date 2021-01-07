@@ -1,0 +1,43 @@
+.game {
+    display: flex;
+    &__main-area {
+        width: 80%;
+    }
+    &__main-area__main-screen {
+        height: 51vh;
+        background: #000451;
+    }
+    &__main-area__sub-screen {
+        height: 21vh;
+        background: #fff;
+    }
+    &__main-area__player-list {
+        height: 21vh;
+        background: #c0cff4;
+        border: 1px solid grey;
+    }
+    &__main-area__answer-btn {
+        height: 6vh;
+        background: #690000;
+    }
+    &__sub-area {
+        width: 20%;
+        background:linear-gradient(180deg,#000451 0,#183cf3 50%,#000451)
+    }
+    &__sub-area__header {
+        border-bottom: 1px solid #fff;
+        height: 7vh;
+    }
+    &__sub-area__log {
+        height: 73vh;
+    }
+    &__sub-area__input {
+        background-color: #c0cff4;
+        height: 6vh;
+        width: 100%;
+        padding: 0px 6px;
+    }
+    &__sub-area__footer {
+        height: 13vh;
+    }
+}
