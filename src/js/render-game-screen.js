@@ -78,20 +78,21 @@ const renderGame =  {
         presenter.className = 'game__sub-screen__presenter';
         subScreenWrapper.append(presenter)
 
-        const presenterName = document.createElement('p');
-        presenterName.className = 'game__sub-screen__presenter-name'
-        presenterName.innerText = renderGame.presenter.name;
-        presenter.append(presenterName);
-
         const presenterImg = document.createElement('img');
         presenterImg.src = renderGame.presenter.img;
         presenterImg.className = 'game__sub-screen__presenter-img';
         presenter.append(presenterImg);
 
+        const presenterName = document.createElement('p');
+        presenterName.className = 'game__sub-screen__presenter-name'
+        presenterName.innerText = renderGame.presenter.name;
+        presenter.append(presenterName);
+
         const display = document.createElement('div');
         display.className = 'game__sub-screen__display';
         subScreenWrapper.append(display);
         const displayText = document.createElement('p');
+        displayText.className = 'game__sub-screen__display__text';
         displayText.innerText = `Правила игры: ${renderGame.rules}`;
         display.append(displayText);
     },
@@ -103,13 +104,10 @@ const renderGame =  {
             playerCard.className = 'game__player-list__card';
             playerList.append(playerCard);
 
-            const playerAvatarWrapepr = document.createElement('div')
-            playerAvatarWrapepr.className = 'game__player-list__avatar-wrapper';
-            playerCard.append(playerAvatarWrapepr);
             const playerAvatar = document.createElement('img');
             playerAvatar.className = 'game__player-list__avatar';
             playerAvatar.src = botList[i].src;
-            playerAvatarWrapepr.append(playerAvatar);
+            playerCard.append(playerAvatar);
 
             const playerInfo = document.createElement('div');
             playerInfo.className = 'game__player-list__info';
@@ -127,13 +125,10 @@ const renderGame =  {
         }
 
         const currentPlayer = playerList.firstChild;
-        const currentPlayerAvatar = currentPlayer.firstChild.firstChild;
+        const currentPlayerAvatar = currentPlayer.firstChild;
         const currentPlayerName = currentPlayer.lastChild.firstChild;
         currentPlayerAvatar.src = renderGame.player.img;
         currentPlayerName.innerText = renderGame.player.name;
-        
-
-
     }
 }
 
