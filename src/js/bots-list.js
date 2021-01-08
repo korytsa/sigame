@@ -31,4 +31,14 @@ const bots = [
         name: 'Луи Пастер',
         src: 'assets/bots/LouisPasteur.jpg'
     },
+    {
+        name: 'Михаил Ломоносов',
+        src: 'assets/bots/MikhailLomonosov.jpg'
+    },
+    {
+        name: 'Стивен Хокинг',
+        src: 'assets/bots/StephenHawking.jpg'
+    },
 ]
+
+export {bots as botList};
