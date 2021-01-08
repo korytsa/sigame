@@ -39,14 +39,14 @@
     &__main-area__player-list {
         display: flex;
         justify-content: space-between;
-        padding: 5vh 16px;
         height: 21vh;
         background: #c0cff4;
-        border: 1px solid grey;
     }
     &__player-list__card {
         display: flex;
         text-align: center;
+        border-left: 1px solid grey;
+        padding: 5vh 8px;
     }
     &__player-list__avatar {
         height: 9vh;
@@ -67,22 +67,53 @@
     }
     &__sub-area {
         width: 20%;
-        background:linear-gradient(180deg,#000451 0,#183cf3 50%,#000451)
+        background: #5996e3;
     }
     &__sub-area__header {
         border-bottom: 1px solid #fff;
         height: 7vh;
+        &__btn-wrapper {
+            padding: 8px;
+        }
+        &__btn {
+            cursor: pointer;
+            color: #897831;
+            font-size: 24px;
+        }
+        &__btn + &__btn {
+            padding-left: 8px;
+        }
+        &__btn:hover {
+            color: #ffe682;
+        }
     }
     &__sub-area__log {
-        height: 73vh;
+        height: 80vh;
     }
     &__sub-area__input {
         background-color: #c0cff4;
         height: 6vh;
         width: 100%;
         padding: 0px 6px;
+
+        border: 1px solid grey;
+        outline: none;
     }
     &__sub-area__footer {
-        height: 13vh;
+        height: 7vh;
+        &-btn {
+            color: #ffe682;
+            cursor: pointer;
+            height: 7vh;
+            width: 50%;
+
+            outline: 1px solid #ffe682;
+        }
+        &-btn:hover {
+            background: #4682B4;
+        }
     }
+}
+.header-btn__active {
+    color: #ffe682;
 }

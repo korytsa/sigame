@@ -60,6 +60,8 @@ const renderGame =  {
         renderGame.renderMainScreen();
         renderGame.renderSubScreen();
         renderGame.renderPlayerList();
+        renderGame.renderHeader();
+        renderGame.renderFooter();
     },
     renderMainScreen() {
         const mainScreen = document.querySelector('.game__main-area__main-screen');
@@ -129,6 +131,38 @@ const renderGame =  {
         const currentPlayerName = currentPlayer.lastChild.firstChild;
         currentPlayerAvatar.src = renderGame.player.img;
         currentPlayerName.innerText = renderGame.player.name;
+    },
+    renderHeader() {
+        const header = document.querySelector('.game__sub-area__header');
+        const btnWrapper = document.createElement('div');
+        btnWrapper.className = 'game__sub-area__header__btn-wrapper';
+        header.append(btnWrapper)
+
+        const chat = document.createElement('button');
+        chat.classList = 'game__sub-area__header__chat game__sub-area__header__btn header-btn__active';
+        chat.innerHTML = 'Чат';
+        btnWrapper.append(chat);
+
+        const participants = document.createElement('button');
+        participants.classList = 'game__sub-area__header__participants game__sub-area__header__btn';
+        participants.innerHTML = 'Участники';
+        btnWrapper.append(participants);
+    },
+    renderFooter() {
+        const footer = document.querySelector('.game__sub-area__footer');
+        const btnWrapper = document.createElement('div');
+        btnWrapper.className = 'game__sub-area__footer__btn-wrapper';
+        footer.append(btnWrapper)
+
+        const pause = document.createElement('button');
+        pause.classList = 'game__sub-area__footer__pause game__sub-area__footer-btn';
+        pause.innerHTML = 'Пауза';
+        btnWrapper.append(pause);
+
+        const leave = document.createElement('button');
+        leave.classList = 'game__sub-area__footer__leave game__sub-area__footer-btn';
+        leave.innerHTML = 'Выйти';
+        btnWrapper.append(leave);
     }
 }
 
