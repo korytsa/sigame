@@ -9,7 +9,7 @@ body{
     max-width: 450px;
     height: 500px;
     margin: 50px auto;
-    padding: 0% 4% 2% 4%;
+    padding: 0% 4% 3% 4%;
     border: cadetblue 6px solid;
 }
 .entrance{
@@ -70,5 +70,38 @@ body{
     li:hover{
         cursor: pointer;
         background-color: rgba(14, 74, 77, 0.185);
+    }
+}
+.game_settings{
+    display: flex;
+    flex-direction: column;
+    color: rgb(9, 54, 56);
+    font-size: 120%;
+
+    &__title{
+        text-align: center;
+        color: rgb(14, 74, 77); 
+    }
+    &__button{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    &__btn{
+        width: 30%;
+        height: 130%;
+        background-color:rgba(145, 178, 209, 0.993);
+        border: cadetblue 3px solid;
+        border-radius: 15px;
+        outline: none;
+        color: rgb(255, 255, 255);
+        font-size: 110%;
+        text-align: center;
+        padding: 0.5%;
+    }
+    &__btn:hover{
+        cursor: pointer;
+        color: rgb(14, 74, 77);
+        background-color: rgb(223, 223, 223);
     }
 }
