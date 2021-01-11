@@ -20,7 +20,20 @@ const changeContent = {
         currentScreen.append(screenContent);
     },
     theme: `Тема: ${questionPack[0].theme}`,
-    author: `Автор темы: ${questionPack[0].author}`
+    author: `Автор темы: ${questionPack[0].author}`,
+    changeAnswer(){
+        const subArea = document.querySelector('.game__sub-area');
+        const input = document.createElement("input");
+        input.className =  "gamesub-areainput";
+        subArea.append(input);
+
+        const changeAnswerArea = document.querySelector('.gamemain-areaanswer-btn');
+        let changeAnswerInput = document.querySelector('.gamemain-area__answer-input');
+        changeAnswerArea.addEventListener('click', function(){
+            changeAnswerArea.style.display = 'none';
+            changeAnswerInput.style.display = 'block';
+        });
+    }
 }
 
 export {changeContent};
