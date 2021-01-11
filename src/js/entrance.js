@@ -1,34 +1,31 @@
-function firstPage(){
-    const markup = `
-        <div class="wrapper">
-            <div class="entrance">
-                <h2 class="entrance__title">SIGame Online</h2>
-                <p class="entrance__name">Ваше имя</p>
-                <input class="entrance__input">
+const renderFirstPage = {
+    firstPage() {
+        const markup = `
+            <div class="wrapper">
+                <div class="entrance">
+                    <h2 class="entrance__title">SIGame Online</h2>
+                    <p class="entrance__name">Ваше имя</p>
+                    <input class="entrance__input">
+                </div>
+                <div class="entrance__button">
+                    <button class="entrance__btn">Вход</button>
+                </div>
             </div>
-            <div class="entrance__button">
-                <button class="entrance__btn">Вход</button>
-            </div>
+            `;
+        document.body.innerHTML = markup;
+    },
+    secondPage(){
+        const pageTwo = `
+        <div class="game_selection">
+            <h2 class="game_selection__title">Выберите действие</h2>
+            <ul>
+                <li class="playWithBots">Играть с ботами</li>
+            </ul>
         </div>
         `;
-        document.body.innerHTML = markup;
-}
-window.addEventListener('load', firstPage());
-
-const entrance_confirm = document.querySelector('.entrance__btn');
-entrance_confirm.addEventListener('click', function secondPage(){
-    const pageTwo = `
-    <div class="game_selection">
-        <h2 class="game_selection__title">Выберите действие</h2>
-        <ul>
-            <li class="playWithBots">Играть с ботами</li>
-        </ul>
-    </div>
-    `;
-    document.body.innerHTML = pageTwo;
-});
-
-function thirdPage(){
+        document.body.innerHTML = pageTwo;
+    },
+    thirdPage(){
     const pageThree =  `
         <div class="wrapper">
         <div class="game_settings">
@@ -46,5 +43,12 @@ function thirdPage(){
             </div>
         </div>
         `;
-    document.body.innerHTML = pageThree;
+        document.body.innerHTML = pageThree;
+    }
 }
+
+
+
+
+
+
