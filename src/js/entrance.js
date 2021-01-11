@@ -35,20 +35,24 @@ const renderFirstPage = {
             <p>Игроки</p>
             
             <span class="game_settings__countTitle">Всего:
-            <span class="game_settings__countValue">3</span></span>
-            <input type="range" class="game_settings__range" min="2" max="10" value="3">
+            <span class="game_settings__countValue">7</span></span>
+            <input type="range" class="game_settings__range" id="myrange" min="2" max="10" step="1" >
             </div>
             <div class="game_settings__button">
                 <button class="game_settings__btn">Начать игру</button>
             </div>
         </div>
         `;
+        
         document.body.innerHTML = pageThree;
     }
 }
 
-
-
+const countPeople = document.getElementById("myrange");
+let countValue = document.querySelector(".game_settings__countValue");
+    countPeople.addEventListener("change", function() {
+        countValue.innerHTML = this.value;
+});
 
 
 
