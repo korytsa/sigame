@@ -1,5 +1,9 @@
 const questionsThemeNature = [
     {
+        author: 'Panda33',
+        theme: 'Природа',
+    },
+    {
         theme: 'Природа',
         points: 10,
         question: 'Сколько материков на планете Земля?',
@@ -30,3 +34,5 @@ const questionsThemeNature = [
         answer: 'Синий кит'
     },
 ]
+
+ export {questionsThemeNature as questionPack};

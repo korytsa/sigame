@@ -166,4 +166,5 @@ const renderGame =  {
     }
 }
 
-renderGame.renderGamePage();
+export {renderGame};
+
