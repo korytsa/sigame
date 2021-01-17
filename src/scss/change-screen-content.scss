@@ -32,5 +32,48 @@
     from {bottom: 196px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
-
+.line{
+    &__center{
+        display: flex;
+        justify-content: space-between;
+        height: 50vh;
+    }
+    &__first{
+        border: yellow 4px solid;
+        background-color: yellow;
+        animation: pulsing 3s forwards 2s;  
+    }
+    &__second{
+        border: yellow 4px solid;
+        background-color: yellow;
+        animation: pulsing 3s forwards 2s;  
+    }
+    &__third{
+        border: yellow 4px solid;
+        background-color: yellow;
+        animation: pulsing 3s forwards 2s;  
+    }
+    &__fourth{
+        border: yellow 4px solid;
+        background-color: rgb(0, 155, 83);
+        animation: pulsing 3s forwards 2s;  
+    }
+    @keyframes pulsing {
+        0% {
+            transform: scale(1.0, 1.0);
+            animation-timing-function: linear;
+        }
+        100% {
+            transform: scale(0.0, 0.0);
+            animation-timing-function: linear;
+        }
+    }
+    &__container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffe682;
+        font-size: xx-large;
+    }
+}
 
