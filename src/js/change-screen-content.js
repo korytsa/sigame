@@ -22,13 +22,13 @@ const changeContent = {
     theme: `Тема: ${questionPack[0].theme}`,
     author: `Автор темы: ${questionPack[0].author}`,
     changeAnswer(){
-        const subArea = document.querySelector('.game__sub-area');
-        const input = document.createElement("input");
-        input.className =  "gamesub-areainput";
-        subArea.append(input);
+        const mainArea = document.querySelector('.game__main-area');
+        const changeAnswerArea = document.querySelector('.game__main-area__answer-btn');
 
-        const changeAnswerArea = document.querySelector('.gamemain-areaanswer-btn');
-        let changeAnswerInput = document.querySelector('.gamemain-area__answer-input');
+        const changeAnswerInput = document.createElement("input");
+        changeAnswerInput.className =  "game__main-area__answer-input";
+        mainArea.append(changeAnswerInput);
+
         changeAnswerArea.addEventListener('click', function(){
             changeAnswerArea.style.display = 'none';
             changeAnswerInput.style.display = 'block';
