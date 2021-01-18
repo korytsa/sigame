@@ -1,11 +1,6 @@
 import {changeContent} from './change-screen-content';
 import {questionPack} from './questions-list';
-// 
-let answerValue;
 
-setTimeout(() => {
-    answerValue = 1;
-}, 6000);
 // 
 const mainScreen = document.querySelector('.game__main-area__main-screen');
 const subScreen = document.querySelector('.game__sub-screen__display');
@@ -29,6 +24,9 @@ const question = {
     unblockInput() {
 
     },
+    blockInput(){
+
+    },
     showQuestion() {
         setTimeout(() => {
             question.showScore(questionPack);
@@ -39,13 +37,13 @@ const question = {
         }, 8000);
         setTimeout(() => {
             question.showTimer()
-        }, 1200);
+        }, 12000);
     },
     // при нажатии энтер вызвать функцию checkAnswer, 
     // если ентер не нажат, вызвать функию timeUp
     checkAnswer(questionList, answerValue) {
         if (answerValue === questionList[1].answer) {
-            // question.changeScore('+);
+            // question.changeScore('+');
             // вызов следующего вопроса
             return true;
         }
@@ -64,4 +62,3 @@ const question = {
         }
     },
 }
-question.showQuestion()
