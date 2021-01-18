@@ -1,4 +1,5 @@
-import {questionPack} from './questions-list'
+import {questionPack} from './questions-list';
+import {inputField} from './users-answer';
 
 const changeContent = {
     clearScreen(currentScreen) {
@@ -32,6 +33,7 @@ const changeContent = {
         changeAnswerArea.addEventListener('click', function(){
             changeAnswerArea.style.display = 'none';
             changeAnswerInput.style.display = 'block';
+            inputField.submit();
         });
     }
 }

@@ -5,3 +5,75 @@
     border: 2px solid #000451;
     outline: none;
 }
+#snackbar {
+    display: flex;
+    visibility: hidden;
+    min-width: 213px;
+    background-color: rgb(75, 75, 75);
+    color: #fff;
+    text-align: center;
+    border-radius: 35px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    bottom: 196px;
+    font-size: 17px;
+}
+#snackbar.show {
+    visibility: visible;
+    animation: fadein 0.7s, fadeout 0.5s 2.5s;
+}
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 196px; opacity: 1;}
+}
+@keyframes fadeout {
+    from {bottom: 196px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+.line{
+    &__center{
+        display: flex;
+        justify-content: space-between;
+        height: 50vh;
+    }
+    &__first{
+        border: yellow 4px solid;
+        background-color: yellow;
+        animation: pulsing 3s forwards 2s;  
+    }
+    &__second{
+        border: yellow 4px solid;
+        background-color: yellow;
+        animation: pulsing 3s forwards 2s;  
+    }
+    &__third{
+        border: yellow 4px solid;
+        background-color: yellow;
+        animation: pulsing 3s forwards 2s;  
+    }
+    &__fourth{
+        border: yellow 4px solid;
+        background-color: rgb(0, 155, 83);
+        animation: pulsing 3s forwards 2s;  
+    }
+    @keyframes pulsing {
+        0% {
+            transform: scale(1.0, 1.0);
+            animation-timing-function: linear;
+        }
+        100% {
+            transform: scale(0.0, 0.0);
+            animation-timing-function: linear;
+        }
+    }
+    &__container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffe682;
+        font-size: xx-large;
+    }
+}
+
