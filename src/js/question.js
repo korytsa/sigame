@@ -1,16 +1,16 @@
 import {changeContent} from './change-screen-content';
 import {questionPack} from './questions-list';
 
-// 
-const mainScreen = document.querySelector('.game__main-area__main-screen');
-const subScreen = document.querySelector('.game__sub-screen__display');
-
-// const playersList = document.querySelectorAll('.game__player-list__card');
-// let playerScore = playersList[0].childNodes[1].childNodes[1];
-// 
+let mainScreen;
+let subScreen;
 
 const question = {
+    indicateScreens() {
+        mainScreen = document.querySelector('.game__main-area__main-screen');
+        subScreen = document.querySelector('.game__sub-screen__display');
+    },
     showScore(questionList) {
+        question.indicateScreens();
         const score = questionList[1].points;
         changeContent.insertScreenContent(mainScreen, score);
         changeContent.insertScreenContent(subScreen, `${questionList[0].theme}: ${score}`);
