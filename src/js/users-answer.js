@@ -1,6 +1,11 @@
+import {changeContent} from './change-screen-content';
+import {questionMethods} from './question';
+import {questionPack} from './questions-list';
+
 const inputField = {
     submit() {
         let changeAnswerInput = document.querySelector('.game__main-area__answer-input');
+        const changeAnswerArea = document.querySelector('.game__main-area__answer-btn');
         const mainArea = document.querySelector('.game__main-area');
 
         changeAnswerInput.addEventListener('keydown', function(e) {
@@ -13,17 +18,24 @@ const inputField = {
                 answerValue.className = "game__main-area__answer__value";
                 answerValue.id = "snackbar";
                 answerValue.innerText = changeAnswerInput.value;
+
                 answer.append(answerValue);
-                
-                // console.log(qwerty);
 
                 answerValue.className = "show";
                 setTimeout(function(){ answerValue.className = answerValue.className.replace("show", ""); }, 3000);
+                
+                changeAnswerArea.style.display = 'block';
+                changeAnswerInput.remove();
+
+                changeAnswerArea.removeEventListener('click', changeContent.showInput);
+                questionMethods.checkAnswer(questionPack, changeAnswerInput.value);
             }
         });
     }
 }
-
+// 
+console.log(questionPack)
+// 
 const line = {
     renderQuestion(content) {
         const mainScreen = document.querySelector('.game__main-area__main-screen');

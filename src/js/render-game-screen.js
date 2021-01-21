@@ -1,5 +1,4 @@
 import {botList} from './bots-list';
-import {changeContent} from './change-screen-content';
 
 const renderGame =  {
     greeting: 'Для ответа на вопрос нажимайте красную кнопку после загорания рамки на экране',
@@ -64,7 +63,6 @@ const renderGame =  {
         renderGame.renderPlayerList();
         renderGame.renderHeader();
         renderGame.renderFooter();
-        changeContent.changeAnswer();
     },
     renderMainScreen() {
         const mainScreen = document.querySelector('.game__main-area__main-screen');

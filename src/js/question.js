@@ -1,6 +1,8 @@
 import {changeContent} from './change-screen-content';
 import {questionPack} from './questions-list';
 import {line} from './users-answer';
+import {inputField} from './users-answer';
+
 
 let mainScreen;
 let subScreen;
@@ -17,42 +19,59 @@ const question = {
         changeContent.insertScreenContent(subScreen, `${questionList[0].theme}: ${score}`);
     },
     showDescription(questionList, questionNumber) {
-        // changeContent.insertScreenContent(mainScreen, questionList[questionNumber].question);
         line.renderQuestion(questionList[questionNumber].question)
     },
-    showTimer() {
-
-    },
-    unblockInput() {
-
+    unblockInput(questionNumber) {
+        changeContent.changeAnswer();
+        inputField.submit(questionNumber);
     },
     blockInput(){
-
+        const changeAnswerArea = document.querySelector('.game__main-area__answer-btn');
+        changeAnswerArea.removeEventListener('click', changeContent.showInput);
     },
     showQuestion(questionNumber) {
         setTimeout(() => {
             question.showScore(questionPack, questionNumber);
+        }, 2000);
+        setTimeout(() => {
+            question.showDescription(questionPack, questionNumber);
         }, 4000);
         setTimeout(() => {
-            // add animation
-            question.showDescription(questionPack, questionNumber);
-        }, 8000);
+            question.unblockInput();
+        }, 6000);
         setTimeout(() => {
-            question.showTimer()
+            question.timeUp();
         }, 12000);
+
     },
     // при нажатии энтер вызвать функцию checkAnswer, 
     // если ентер не нажат, вызвать функию timeUp
-    checkAnswer(questionList, answerValue) {
-        if (answerValue === questionList[1].answer) {
+    checkAnswer(questionPack, answerValue) {
+        const questionDescroption = document.querySelector('.line__letter-container').innerText;
+
+        let trueAnswer;
+        questionPack.find((el) => {
+            if (el.question === questionDescroption) {
+                trueAnswer = el.answer;
+            }
+        })
+
+        if (answerValue === trueAnswer) {
+            console.log('вы правы');
             // question.changeScore('+');
             // вызов следующего вопроса
-            return true;
+            // return true;
+        } else {
+            console.log('вы не правы')
+            // вывести что не прав
+            // return false;
         }
-        return false;
+
+
     },
     timeUp() {
-        question.changeScore('-');
+        question.blockInput();
+        // question.changeScore('-');
         // вызов следующего вопроса
     },
     changeScore(operand){

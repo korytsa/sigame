@@ -30,11 +30,17 @@ const changeContent = {
         changeAnswerInput.className =  "game__main-area__answer-input";
         mainArea.append(changeAnswerInput);
 
-        changeAnswerArea.addEventListener('click', function(){
-            changeAnswerArea.style.display = 'none';
-            changeAnswerInput.style.display = 'block';
-            inputField.submit();
-        });
+
+
+        changeAnswerArea.addEventListener('click', changeContent.showInput);
+
+    },
+    showInput() {
+        const changeAnswerArea = document.querySelector('.game__main-area__answer-btn');
+        const changeAnswerInput = document.querySelector(".game__main-area__answer-input");
+
+        changeAnswerArea.style.display = 'none';
+        changeAnswerInput.style.display = 'block';
     }
 }
 
