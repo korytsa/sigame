@@ -5,8 +5,8 @@ import {questionPack} from './questions-list';
 const mainScreen = document.querySelector('.game__main-area__main-screen');
 const subScreen = document.querySelector('.game__sub-screen__display');
 
-const playersList = document.querySelectorAll('.game__player-list__card');
-let playerScore = playersList[0].childNodes[1].childNodes[1];
+// const playersList = document.querySelectorAll('.game__player-list__card');
+// let playerScore = playersList[0].childNodes[1].childNodes[1];
 // 
 
 const question = {
@@ -62,3 +62,5 @@ const question = {
         }
     },
 }
+
+export {question as questionMethods};
