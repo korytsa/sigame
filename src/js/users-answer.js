@@ -25,8 +25,12 @@ const inputField = {
 }
 
 const line = {
-    renderQuestion() {
+    renderQuestion(content) {
         const mainScreen = document.querySelector('.game__main-area__main-screen');
+
+        while (mainScreen.firstChild) {
+            mainScreen.firstChild.remove();
+        }
 
         const firstLine = document.createElement("p");
         firstLine.className = "line__first";
@@ -46,7 +50,7 @@ const line = {
 
         const letterContainer = document.createElement('p');
         letterContainer.className = 'line__letter-container';
-        letterContainer.innerText = 'Example!';
+        letterContainer.innerText = content;
         container.appendChild(letterContainer);
 
         const fourthLine = document.createElement("div");

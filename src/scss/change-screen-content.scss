@@ -41,22 +41,22 @@
     &__first{
         border: yellow 4px solid;
         background-color: yellow;
-        animation: pulsing 3s forwards 2s;  
+        animation: pulsing 3s forwards 5s;  
     }
     &__second{
         border: yellow 4px solid;
         background-color: yellow;
-        animation: pulsing 3s forwards 2s;  
+        animation: pulsing 3s forwards 5s;  
     }
     &__third{
         border: yellow 4px solid;
         background-color: yellow;
-        animation: pulsing 3s forwards 2s;  
+        animation: pulsing 3s forwards 5s;  
     }
     &__fourth{
         border: yellow 4px solid;
         background-color: rgb(0, 155, 83);
-        animation: pulsing 3s forwards 2s;  
+        animation: pulsing 3s forwards 5s;  
     }
     @keyframes pulsing {
         0% {

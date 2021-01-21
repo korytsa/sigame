@@ -12,6 +12,7 @@ const renderGame =  {
         img: 'assets/img/player.png',
         name: 'Player',
     },
+    // использовать значение, указанное пользователем
     quantityPlayers: 5,
     renderGamePage() {
         const gameWrapper = document.createElement("div");

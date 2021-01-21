@@ -1,5 +1,6 @@
 import {changeContent} from './change-screen-content';
 import {questionPack} from './questions-list';
+import {line} from './users-answer';
 
 let mainScreen;
 let subScreen;
@@ -16,7 +17,8 @@ const question = {
         changeContent.insertScreenContent(subScreen, `${questionList[0].theme}: ${score}`);
     },
     showDescription(questionList, questionNumber) {
-        changeContent.insertScreenContent(mainScreen, questionList[questionNumber].question);
+        // changeContent.insertScreenContent(mainScreen, questionList[questionNumber].question);
+        line.renderQuestion(questionList[questionNumber].question)
     },
     showTimer() {
 
