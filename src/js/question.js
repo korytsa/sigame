@@ -9,14 +9,14 @@ const question = {
         mainScreen = document.querySelector('.game__main-area__main-screen');
         subScreen = document.querySelector('.game__sub-screen__display');
     },
-    showScore(questionList) {
+    showScore(questionList, questionNumber) {
         question.indicateScreens();
-        const score = questionList[1].points;
+        const score = questionList[questionNumber].points;
         changeContent.insertScreenContent(mainScreen, score);
         changeContent.insertScreenContent(subScreen, `${questionList[0].theme}: ${score}`);
     },
-    showDescription(questionList) {
-        changeContent.insertScreenContent(mainScreen, questionList[1].question);
+    showDescription(questionList, questionNumber) {
+        changeContent.insertScreenContent(mainScreen, questionList[questionNumber].question);
     },
     showTimer() {
 
@@ -27,13 +27,13 @@ const question = {
     blockInput(){
 
     },
-    showQuestion() {
+    showQuestion(questionNumber) {
         setTimeout(() => {
-            question.showScore(questionPack);
+            question.showScore(questionPack, questionNumber);
         }, 4000);
         setTimeout(() => {
             // add animation
-            question.showDescription(questionPack);
+            question.showDescription(questionPack, questionNumber);
         }, 8000);
         setTimeout(() => {
             question.showTimer()
