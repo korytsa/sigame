@@ -33,9 +33,6 @@ const inputField = {
         });
     }
 }
-// 
-console.log(questionPack)
-// 
 const line = {
     renderQuestion(content) {
         const mainScreen = document.querySelector('.game__main-area__main-screen');

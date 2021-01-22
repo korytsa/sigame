@@ -7,7 +7,7 @@ import {questionPack} from './questions-list';
 
 renderGame.renderGamePage();
 
-questionMethods.showQuestion(1)
+questionMethods.showQuestion(1);
 
 // вызов второго вопроса
 // questionMethods.showQuestion(2)

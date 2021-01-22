@@ -2,6 +2,7 @@ import {changeContent} from './change-screen-content';
 import {questionPack} from './questions-list';
 import {line} from './users-answer';
 import {inputField} from './users-answer';
+import {questionMethods} from './question';
 
 
 let mainScreen;
@@ -44,43 +45,44 @@ const question = {
         }, 12000);
 
     },
-    // при нажатии энтер вызвать функцию checkAnswer, 
-    // если ентер не нажат, вызвать функию timeUp
     checkAnswer(questionPack, answerValue) {
         const questionDescroption = document.querySelector('.line__letter-container').innerText;
+        const playerScore = document.querySelector('.game__player-list__score');
 
         let trueAnswer;
+        let questionScore;
+        
         questionPack.find((el) => {
             if (el.question === questionDescroption) {
                 trueAnswer = el.answer;
+                questionScore = el.points;
             }
         })
 
+        const questionIndex = questionPack.findIndex((el) => {
+            if (el.question === questionDescroption ) {
+                return true;
+            }
+            return false;
+        });
+
+
         if (answerValue === trueAnswer) {
-            console.log('вы правы');
-            // question.changeScore('+');
-            // вызов следующего вопроса
-            // return true;
+            changeContent.insertScreenContent(subScreen, 'Правильный ответ');
+            playerScore.innerText = +(playerScore.innerText) + questionScore;
         } else {
-            console.log('вы не правы')
-            // вывести что не прав
-            // return false;
+            changeContent.insertScreenContent(subScreen, `Вы ответили неправильно, правильный ответ: 
+            ${trueAnswer}`);
+            playerScore.innerText -= questionScore;
         }
-
-
+        setTimeout(() => {
+            questionMethods.showQuestion((+questionIndex) + 1);
+        }, 2000);
     },
     timeUp() {
         question.blockInput();
-        // question.changeScore('-');
-        // вызов следующего вопроса
-    },
-    changeScore(operand){
-        const questionScore = questionPack[1].points;
-        if (operand === '-') {
-            playerScore.innerText -= questionScore;
-        } else {
-            playerScore.innerText = +(playerScore.innerText) + questionScore;
-        }
+
+        
     },
 }
 
