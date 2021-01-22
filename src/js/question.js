@@ -81,8 +81,33 @@ const question = {
     },
     timeUp() {
         question.blockInput();
+        const questionDescroption = document.querySelector('.line__letter-container').innerText;
+        const playerScore = document.querySelector('.game__player-list__score');
 
+        let trueAnswer;
+        let questionScore;
         
+        questionPack.find((el) => {
+            if (el.question === questionDescroption) {
+                trueAnswer = el.answer;
+                questionScore = el.points;
+            }
+        })
+
+        const questionIndex = questionPack.findIndex((el) => {
+            if (el.question === questionDescroption ) {
+                return true;
+            }
+            return false;
+        });
+
+        changeContent.insertScreenContent(subScreen, `Время вышло, правильный ответ: 
+        ${trueAnswer}`);
+        playerScore.innerText -= questionScore;
+
+        setTimeout(() => {
+            questionMethods.showQuestion((+questionIndex) + 1);
+        }, 2000);
     },
 }
 
