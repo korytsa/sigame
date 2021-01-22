@@ -14,6 +14,11 @@ const renderGame =  {
     // использовать значение, указанное пользователем
     quantityPlayers: 5,
     renderGamePage() {
+        const body = document.querySelector('body');
+        while (body.firstChild) {
+            body.firstChild.remove();
+        }
+
         const gameWrapper = document.createElement("div");
         gameWrapper.className = "game";
         document.body.append(gameWrapper)

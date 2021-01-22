@@ -1,4 +1,8 @@
-const renderFirstPage = {
+import {renderGame} from './render-game-screen';
+
+let playWithBotsBtn;
+let startGameBtn;
+const renderPages = {
     firstPage() {
         const markup = `
             <div class="wrapper">
@@ -24,6 +28,9 @@ const renderFirstPage = {
         </div>
         `;
         document.body.innerHTML = pageTwo;
+
+        playWithBotsBtn = document.querySelector('.playWithBots')
+        playWithBotsBtn.addEventListener('click', renderPages.thirdPage)
     },
     thirdPage(){
     const pageThree =  `
@@ -45,14 +52,18 @@ const renderFirstPage = {
         `;
         
         document.body.innerHTML = pageThree;
+
+        const countPeople = document.getElementById("myrange");
+        let countValue = document.querySelector(".game_settings__countValue");
+        countPeople.addEventListener("change", function() {
+            countValue.innerHTML = this.value;
+        });
+
+        startGameBtn = document.querySelector('.game_settings__btn');
+        startGameBtn.addEventListener('click', renderGame.renderGamePage)
+        
     }
 }
 
-const countPeople = document.getElementById("myrange");
-let countValue = document.querySelector(".game_settings__countValue");
-    countPeople.addEventListener("change", function() {
-        countValue.innerHTML = this.value;
-});
-
-
+export {renderPages};
 
