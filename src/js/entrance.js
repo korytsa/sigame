@@ -25,6 +25,9 @@ const renderPages = {
     },
     secondPage(){
         const gameWrapper = document.querySelector('.game-wrapper');
+        const input = document.querySelector('.entrance__input');
+        gameWrapper.dataset.playerName = input.value;
+
         const pageTwo = `
         <div class="game_selection">
             <h2 class="game_selection__title">Выберите действие</h2>
@@ -38,8 +41,13 @@ const renderPages = {
         playWithBotsBtn = document.querySelector('.playWithBots')
         playWithBotsBtn.addEventListener('click', renderPages.thirdPage)
     },
+    renderSecondPage() {
+        const nextPageBtn = document.querySelector('.entrance__btn');
+        nextPageBtn.addEventListener('click', renderPages.secondPage);
+    },
     thirdPage(){
         const gameWrapper = document.querySelector('.game-wrapper');
+
         const pageThree =  `
         <div class="wrapper">
         <div class="game_settings">
@@ -49,7 +57,7 @@ const renderPages = {
             <p>Игроки</p>
             
             <span class="game_settings__countTitle">Всего:
-            <span class="game_settings__countValue">7</span></span>
+            <span class="game_settings__countValue">5</span></span>
             <input type="range" class="game_settings__range" id="myrange" min="2" max="10" step="1" >
             </div>
             <div class="game_settings__button">

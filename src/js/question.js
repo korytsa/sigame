@@ -33,16 +33,16 @@ const question = {
     showQuestion(questionNumber) {
         setTimeout(() => {
             question.showScore(questionPack, questionNumber);
-        }, 2000);
-        setTimeout(() => {
-            question.showDescription(questionPack, questionNumber);
         }, 4000);
         setTimeout(() => {
+            question.showDescription(questionPack, questionNumber);
+        }, 8000);
+        setTimeout(() => {
             question.unblockInput();
-        }, 6000);
+        }, 12000);
         setTimeout(() => {
             question.timeUp();
-        }, 12000);
+        }, 16000);
 
     },
     checkAnswer(questionPack, answerValue) {
@@ -77,7 +77,7 @@ const question = {
         }
         setTimeout(() => {
             questionMethods.showQuestion((+questionIndex) + 1);
-        }, 2000);
+        }, 4000);
     },
     timeUp() {
         question.blockInput();
@@ -107,7 +107,7 @@ const question = {
 
         setTimeout(() => {
             questionMethods.showQuestion((+questionIndex) + 1);
-        }, 2000);
+        }, 4000);
     },
 }
 

@@ -2,7 +2,7 @@ import {botList} from './bots-list';
 import {questionMethods} from './question';
 
 const renderGame =  {
-    greeting: 'Для ответа на вопрос нажимайте красную кнопку после загорания рамки на экране',
+    greeting: 'Для ответа на вопрос нажимайте красную кнопку, когда рамка вокруг вопроса начнет двигаться',
     rules: 'Упрощенная',
     presenter: {
         img: 'assets/bots/Aristotle.jpg',
@@ -12,11 +12,15 @@ const renderGame =  {
         img: 'assets/img/player.png',
         name: 'Player',
     },
-    // использовать значение, указанное пользователем
-    quantityPlayers: 5,
     renderGamePage() {
         const gameWrapper = document.querySelector('.game-wrapper')
         gameWrapper.className = 'game';
+
+        const gameName = document.querySelector('input');
+        gameWrapper.dataset.gameName = gameName.value;
+
+        const numberOfPlayers = document.querySelector('.game_settings__countValue');
+        gameWrapper.dataset.numberOfPlayers = numberOfPlayers.innerText;
 
         while (gameWrapper.firstChild) {
             gameWrapper.firstChild.remove();
@@ -105,9 +109,11 @@ const renderGame =  {
         display.append(displayText);
     },
     renderPlayerList() {
+        const quantityPlayers = document.querySelector('.game').dataset.numberOfPlayers;
+
         const playerList = document.querySelector('.game__main-area__player-list');
 
-        for (let i = 0; i < renderGame.quantityPlayers; i++) {
+        for (let i = 0; i < quantityPlayers; i++) {
             const playerCard = document.createElement('div');
             playerCard.className = 'game__player-list__card';
             playerList.append(playerCard);

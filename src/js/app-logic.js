@@ -6,19 +6,8 @@ import {renderPages} from './entrance';
 
 renderPages.firstPage();
 
-const renderSecondPage = () => {
-    // сохранить имя пользователя
-    const nextPageBtn = document.querySelector('.entrance__btn');
-    nextPageBtn.addEventListener('click', renderPages.secondPage);
-}
+renderPages.renderSecondPage();
 
-renderSecondPage();
-
-
-// добавить имя пользователя
-// renderGame.renderGamePage(); 
-
-// questionMethods.showQuestion(1);
 
 
 
