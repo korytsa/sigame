@@ -2,8 +2,13 @@ import {renderGame} from './render-game-screen';
 
 let playWithBotsBtn;
 let startGameBtn;
+
 const renderPages = {
     firstPage() {
+        const gameWrapper = document.createElement('div');
+        gameWrapper.className = 'game-wrapper';
+        document.body.append(gameWrapper)
+
         const markup = `
             <div class="wrapper">
                 <div class="entrance">
@@ -16,9 +21,10 @@ const renderPages = {
                 </div>
             </div>
             `;
-        document.body.innerHTML = markup;
+        gameWrapper.innerHTML = markup;
     },
     secondPage(){
+        const gameWrapper = document.querySelector('.game-wrapper');
         const pageTwo = `
         <div class="game_selection">
             <h2 class="game_selection__title">Выберите действие</h2>
@@ -27,13 +33,14 @@ const renderPages = {
             </ul>
         </div>
         `;
-        document.body.innerHTML = pageTwo;
+        gameWrapper.innerHTML = pageTwo;
 
         playWithBotsBtn = document.querySelector('.playWithBots')
         playWithBotsBtn.addEventListener('click', renderPages.thirdPage)
     },
     thirdPage(){
-    const pageThree =  `
+        const gameWrapper = document.querySelector('.game-wrapper');
+        const pageThree =  `
         <div class="wrapper">
         <div class="game_settings">
             <h2 class="game_settings__title">Новая игра </h2>
@@ -51,7 +58,7 @@ const renderPages = {
         </div>
         `;
         
-        document.body.innerHTML = pageThree;
+        gameWrapper.innerHTML = pageThree;
 
         const countPeople = document.getElementById("myrange");
         let countValue = document.querySelector(".game_settings__countValue");

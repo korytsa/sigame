@@ -1,4 +1,5 @@
 import {botList} from './bots-list';
+import {questionMethods} from './question';
 
 const renderGame =  {
     greeting: 'Для ответа на вопрос нажимайте красную кнопку после загорания рамки на экране',
@@ -14,14 +15,12 @@ const renderGame =  {
     // использовать значение, указанное пользователем
     quantityPlayers: 5,
     renderGamePage() {
-        const body = document.querySelector('body');
-        while (body.firstChild) {
-            body.firstChild.remove();
-        }
+        const gameWrapper = document.querySelector('.game-wrapper')
+        gameWrapper.className = 'game';
 
-        const gameWrapper = document.createElement("div");
-        gameWrapper.className = "game";
-        document.body.append(gameWrapper)
+        while (gameWrapper.firstChild) {
+            gameWrapper.firstChild.remove();
+        }
 
         const mainArea = document.createElement("div");
         mainArea.className = "game__main-area";
@@ -67,7 +66,8 @@ const renderGame =  {
         renderGame.renderSubScreen();
         renderGame.renderPlayerList();
         renderGame.renderHeader();
-        renderGame.renderFooter();
+        renderGame.renderFooter();  
+        questionMethods.showQuestion(1);
     },
     renderMainScreen() {
         const mainScreen = document.querySelector('.game__main-area__main-screen');
