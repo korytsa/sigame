@@ -7,7 +7,7 @@ const renderPages = {
     firstPage() {
         const gameWrapper = document.createElement('div');
         gameWrapper.className = 'game-wrapper';
-        document.body.append(gameWrapper)
+        document.body.prepend(gameWrapper)
 
         const markup = `
             <div class="wrapper">

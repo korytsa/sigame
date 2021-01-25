@@ -40,9 +40,9 @@ const question = {
         setTimeout(() => {
             question.unblockInput();
         }, 12000);
-        setTimeout(() => {
-            question.timeUp();
-        }, 16000);
+        // setTimeout(() => {
+        //     question.timeUp();
+        // }, 16000);
 
     },
     checkAnswer(questionPack, answerValue) {
@@ -105,6 +105,7 @@ const question = {
         ${trueAnswer}`);
         playerScore.innerText -= questionScore;
 
+        
         setTimeout(() => {
             questionMethods.showQuestion((+questionIndex) + 1);
         }, 4000);

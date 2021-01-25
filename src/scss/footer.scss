@@ -1,0 +1,25 @@
+.footer {
+    background-color: #fff;
+    border-top: 1px solid #cdcdcd;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 0px 16px;
+    a {
+        text-decoration: none;
+    }
+    &__link {
+        color: #000;
+        border-bottom: 1px solid #cdcdcd;
+    }
+    &-rsschool {
+        margin: 16px auto;
+        display: flex;
+        &__img {
+            width: 85px;
+        }
+        &__link {
+            margin: 6px 0px 0px 8px;
+        }
+    }
+}

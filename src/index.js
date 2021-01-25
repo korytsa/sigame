@@ -2,6 +2,7 @@ import './scss/app.scss';
 import './scss/render-game-screen.scss';
 import './scss/change-screen-content.scss';
 import './scss/entrance.scss';
+import './scss/footer.scss';
 import './js/bots-list.js';
 import './js/questions-list.js';
 import './js/render-game-screen.js';

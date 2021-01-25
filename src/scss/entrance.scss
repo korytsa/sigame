@@ -1,6 +1,9 @@
 body{
     background-color: rgba(145, 178, 209, 0.993);
 }
+.game-wrapper {
+    height: 100vh;
+}
 .wrapper{
     display: flex;
     flex-direction: column;
