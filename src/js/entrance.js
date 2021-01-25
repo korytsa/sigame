@@ -26,7 +26,12 @@ const renderPages = {
     secondPage(){
         const gameWrapper = document.querySelector('.game-wrapper');
         const input = document.querySelector('.entrance__input');
-        gameWrapper.dataset.playerName = input.value;
+        if (input.value !== '') {
+            gameWrapper.dataset.playerName = input.value;
+        } else {
+            gameWrapper.dataset.playerName = 'Player';
+        }
+
 
         const pageTwo = `
         <div class="game_selection">

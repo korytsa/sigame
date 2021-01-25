@@ -9,8 +9,7 @@ const renderGame =  {
         name: 'Аристотель',
     },
     player: {
-        img: 'assets/img/player.png',
-        name: 'Player',
+        img: 'assets/img/player.png'
     },
     renderGamePage() {
         const gameWrapper = document.querySelector('.game-wrapper')
@@ -142,7 +141,7 @@ const renderGame =  {
         const currentPlayerAvatar = currentPlayer.firstChild;
         const currentPlayerName = currentPlayer.lastChild.firstChild;
         currentPlayerAvatar.src = renderGame.player.img;
-        currentPlayerName.innerText = renderGame.player.name;
+        currentPlayerName.innerText = document.querySelector('.game').dataset.playerName;
     },
     renderHeader() {
         const header = document.querySelector('.game__sub-area__header');
